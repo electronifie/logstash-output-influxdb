@@ -334,7 +334,7 @@ class LogStash::Outputs::InfluxDB < LogStash::Outputs::Base
 
   # Return a quoted string of the given value if it's not a number
   def quoted(value)
-    Numeric === value ? value : %Q|"#{value.gsub('"','\"')}"|
+    Numeric === value ? value : %Q|"#{value}".gsub('"','\"')|
   end
 
 
